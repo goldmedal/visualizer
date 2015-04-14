@@ -56,7 +56,8 @@ qemu: out/main.bin $(QEMU_STM32)
 qemuauto: out/main.bin gdbscript
 	bash emulate.sh out/main.bin
 	python log2grasp.py
+	python context_switch.py
 	../grasp_linux/grasp sched.grasp
 
 clean:
-	rm -rf out log sched.grasp
+	rm -rf out log sched.grasp cost
